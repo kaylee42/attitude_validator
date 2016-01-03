@@ -1,5 +1,5 @@
 <% @errors.each do |k, message| %>
 
-<%= message %>
-
+<%=k.capitalize%>: <%= message.join %>
+</br></br>
 <% end %>
