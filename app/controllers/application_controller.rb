@@ -8,14 +8,19 @@ class ApplicationController < Sinatra::Base
     erb :signup
   end
 
+  get '/index' do
+    erb :show
+  end
+
   post '/signup' do
     user = User.new(params)
     if user.save
-      redirect to '/'
+      erb :show
     else
       @errors = user.errors.messages
       erb :failure
     end
   end
+
 
 end
